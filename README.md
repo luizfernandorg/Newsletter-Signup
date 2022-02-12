@@ -1,4 +1,4 @@
-# NEWS Letter SignUp
+# News Letter SignUp
 
 Example of integration of MailChimp with the application for the challenge NewsLetter-Signup from The Complete 2022 Web Development Bootcamp on Udemy
 
