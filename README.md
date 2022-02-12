@@ -11,4 +11,4 @@ Example of a integration of MailChimp with the application for the challenge New
 - Express
 - @mailchimp/mailchimp_marketing
 - Jquery
-- Bootstrap 5s
+- Bootstrap 5
