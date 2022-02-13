@@ -9,7 +9,7 @@ $(".form-signin").on('submit', (event) => {
         { 'name': name, 'surname': surname, 'email': email },
         (data) => {
             if(data.result === "failure"){
-                $(".result").text("A failure happens, try again!!");
+                $(".result").text("a failure did happen, try again!!");
             }else{
                 $(".result").text("Subscribing was a Success!!");
                 $("#floatingFirstName").val("");
