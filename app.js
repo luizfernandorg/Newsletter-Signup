@@ -1,6 +1,7 @@
 //jshint esversion:8
 const express = require("express");
 const mailchimp = require("@mailchimp/mailchimp_marketing");
+
 mailchimp.setConfig({
     apiKey: "677-us14", //fake value, need to create an account on mailchimp and get the apiKey
     server: "us14",
@@ -49,7 +50,6 @@ app.post("/signup", (req,res) => {
     response();
 });
 
-const port = 3000;
-app.listen(port, () => {
-    console.log("Server is running on port " + port );
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server is running on port " + (process.env.PORT || 3000));
 });
