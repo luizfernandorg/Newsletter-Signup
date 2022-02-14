@@ -1,9 +1,11 @@
 //jshint esversion:8
+require("dotenv").config(); //to read environment variables
 const express = require("express");
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 
 mailchimp.setConfig({
-    apiKey: "677-us14", //fake value, need to create an account on mailchimp and get the apiKey
+    //for the line bellow you need to create on ".env" file with APIKEY entry, like: APIKEY="..."
+    apiKey: process.env.APIKEY, //fake value, need to create an account on mailchimp and get the apiKey
     server: "us14",
 });
 
@@ -22,7 +24,8 @@ app.post("/signup", (req,res) => {
     const surname = req.body.surname;
     const email = req.body.email;
 
-    const listId = "333"; //fake value, need to create an account on mailchimp and get the id for your audience
+    //for the line bellow you need to create on ".env" file with AUDIENCEID entry, like: AUDIENCEID=....
+    const listId = process.env.AUDIENCEID; //fake value, need to create an account on mailchimp and get the id for your audience
     const subscribingUser = {
         firstName: name,
         lastName: surname,
@@ -40,10 +43,12 @@ app.post("/signup", (req,res) => {
             });
             if(response.id){
                 res.json({'result':'success'});
+                console.log("Was a success");
             }else{
                 res.json({'result':'failure'});
             }
         } catch (e){
+            console.log("Got a failure");
             res.json({'result':'failure'});
         }       
     };

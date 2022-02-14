@@ -12,3 +12,11 @@ Example of integration of MailChimp with the application for the challenge NewsL
 - @mailchimp/mailchimp_marketing
 - Jquery
 - Bootstrap 5
+
+### Environment
+Two enviroment variable need to be created on .env file
+APIKEY (string surrounded by "..." double quotes) and AUDIENCEID (a number value),
+
+Example of ".env" file:
+- APIKEY="3add33dee344eee-us14"
+- AUDIENCEID=123123828223
