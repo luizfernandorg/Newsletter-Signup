@@ -43,12 +43,8 @@ app.post("/signup", (req,res) => {
             });
             if(response.id){
                 res.json({'result':'success'});
-                console.log("Was a success");
-            }else{
-                res.json({'result':'failure'});
             }
         } catch (e){
-            console.log("Got a failure");
             res.json({'result':'failure'});
         }       
     };
